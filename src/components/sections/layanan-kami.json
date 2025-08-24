@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_layanan_kamis",
+  "info": {
+    "displayName": "Layanan Kami",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "konten": {
+      "type": "component",
+      "component": "blocks.konten",
+      "repeatable": false
+    },
+    "daftar_layanan": {
+      "type": "component",
+      "component": "blocks.layanan",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

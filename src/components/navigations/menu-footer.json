@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_navigations_menu_footers",
+  "info": {
+    "displayName": "Menu Footer",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "sub_menu": {
+      "type": "component",
+      "component": "navigations.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

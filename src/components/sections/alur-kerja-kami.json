@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_alur_kerja_kamis",
+  "info": {
+    "displayName": "Alur Kerja Kami",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "konten": {
+      "type": "component",
+      "component": "blocks.konten",
+      "repeatable": false
+    },
+    "daftar_alur_kerja": {
+      "type": "component",
+      "component": "blocks.alur-kerja",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
