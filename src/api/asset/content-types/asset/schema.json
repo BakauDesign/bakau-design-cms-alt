@@ -24,6 +24,14 @@
       },
       "required": true
     },
+    "harga": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "deskripsi": {
       "type": "text",
       "pluginOptions": {
@@ -45,15 +53,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "harga": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
     },
     "penanda": {
       "type": "string",
@@ -83,40 +82,6 @@
         }
       }
     },
-    "kompatibel": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "lisensi": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "rilis": {
-      "type": "date",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": false
-    },
-    "pembuat": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
     "slug": {
       "type": "uid",
       "pluginOptions": {
@@ -135,6 +100,16 @@
       },
       "required": true,
       "default": false
+    },
+    "informasi_aset": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "blocks.informasi-aset",
+      "repeatable": false
     }
   }
 }

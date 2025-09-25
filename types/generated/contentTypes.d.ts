@@ -405,8 +405,13 @@ export interface ApiAssetAsset extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    harga: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
+    harga: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    informasi_aset: Schema.Attribute.Component<'blocks.informasi-aset', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -427,33 +432,14 @@ export interface ApiAssetAsset extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    kompatibel: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     link_pembelian: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    lisensi: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::asset.asset'>;
-    pembuat: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     penanda: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -461,12 +447,6 @@ export interface ApiAssetAsset extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    rilis: Schema.Attribute.Date &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     slug: Schema.Attribute.UID<'judul'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
