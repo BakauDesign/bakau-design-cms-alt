@@ -26,6 +26,20 @@ export interface BlocksCta extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksInformasiAset extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_informasi_asets';
+  info: {
+    displayName: 'Informasi Aset';
+    icon: 'file';
+  };
+  attributes: {
+    kompatibel: Schema.Attribute.String;
+    lisensi: Schema.Attribute.String;
+    pembuat: Schema.Attribute.String;
+    rilis: Schema.Attribute.Date;
+  };
+}
+
 export interface BlocksKonten extends Struct.ComponentSchema {
   collectionName: 'components_blocks_kontens';
   info: {
@@ -140,6 +154,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'blocks.alur-kerja': BlocksAlurKerja;
       'blocks.cta': BlocksCta;
+      'blocks.informasi-aset': BlocksInformasiAset;
       'blocks.konten': BlocksKonten;
       'blocks.layanan': BlocksLayanan;
       'blocks.penanda': BlocksPenanda;

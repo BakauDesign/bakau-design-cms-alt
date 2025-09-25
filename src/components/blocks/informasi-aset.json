@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_informasi_asets",
+  "info": {
+    "displayName": "Informasi Aset",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "kompatibel": {
+      "type": "string"
+    },
+    "lisensi": {
+      "type": "string"
+    },
+    "pembuat": {
+      "type": "string"
+    },
+    "rilis": {
+      "type": "date"
+    }
+  },
+  "config": {}
+}
