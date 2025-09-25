@@ -15,6 +15,9 @@
       "type": "string",
       "required": true
     },
+    "nama_highlighted": {
+      "type": "string"
+    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
@@ -40,6 +43,15 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "is_highlighted": {
+      "type": "boolean",
+      "default": false
+    },
+    "urutan": {
+      "type": "integer",
+      "unique": true,
+      "min": 1
     }
   }
 }

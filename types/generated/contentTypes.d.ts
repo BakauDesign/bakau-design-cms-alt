@@ -647,6 +647,50 @@ export interface ApiHalamanBerandaHalamanBeranda
   };
 }
 
+export interface ApiHalamanPortofolioHalamanPortofolio
+  extends Struct.SingleTypeSchema {
+  collectionName: 'halaman_portofolios';
+  info: {
+    displayName: 'Halaman Portofolio';
+    pluralName: 'halaman-portofolios';
+    singularName: 'halaman-portofolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'blocks.cta', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    hero: Schema.Attribute.Component<'blocks.konten', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::halaman-portofolio.halaman-portofolio'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHalamanTemplateDetailHalamanTemplateDetail
   extends Struct.SingleTypeSchema {
   collectionName: 'halaman_template_details';
@@ -910,6 +954,8 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     is_active: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    is_highlighted: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     jenis: Schema.Attribute.Enumeration<['online', 'design only']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -918,6 +964,7 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     nama: Schema.Attribute.String & Schema.Attribute.Required;
+    nama_highlighted: Schema.Attribute.String;
     penanda: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     thumbnail: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
@@ -925,6 +972,14 @@ export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+    urutan: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
   };
 }
 
@@ -1441,6 +1496,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::halaman-beranda.halaman-beranda': ApiHalamanBerandaHalamanBeranda;
+      'api::halaman-portofolio.halaman-portofolio': ApiHalamanPortofolioHalamanPortofolio;
       'api::halaman-template-detail.halaman-template-detail': ApiHalamanTemplateDetailHalamanTemplateDetail;
       'api::halaman-template.halaman-template': ApiHalamanTemplateHalamanTemplate;
       'api::halaman-tentang-kami.halaman-tentang-kami': ApiHalamanTentangKamiHalamanTentangKami;

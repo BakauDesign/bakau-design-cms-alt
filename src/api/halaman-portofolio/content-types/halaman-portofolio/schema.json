@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "halaman_portofolios",
+  "info": {
+    "singularName": "halaman-portofolio",
+    "pluralName": "halaman-portofolios",
+    "displayName": "Halaman Portofolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.konten",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.cta",
+      "repeatable": false
+    }
+  }
+}
